@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MedicationApiApplication {
 
 	public static void main(String[] args) {
-		MedicationService service = new MedicationService();
-		service.readMedicationsFromFile("a");
 		SpringApplication.run(MedicationApiApplication.class, args);
 	}
 
