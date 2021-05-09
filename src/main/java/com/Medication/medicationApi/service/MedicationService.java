@@ -28,14 +28,12 @@ public class MedicationService {
             //creating workbook instance that refers to .xls file
                 XSSFWorkbook wb = new XSSFWorkbook(pkg);
                 //creating a Sheet object to retrieve the object
-                XSSFSheet sheet=wb.getSheetAt(0);
-                FormulaEvaluator formulaEvaluator = wb.getCreationHelper().createFormulaEvaluator();
+                XSSFSheet sheet = wb.getSheetAt(0);
                 int rowCount = 0;
                 for(Row row: sheet){    //iteration over row using for each loop
                     int cellCount = 0;
                     Medication medication = new Medication();
                     for(Cell cell: row){    //iteration over cell using for each loop
-
                         DataFormatter df = new DataFormatter();
                         if(cellCount == 1 && rowCount != 0){
                             medication.setBarcode(df.formatCellValue(cell));
@@ -58,8 +56,7 @@ public class MedicationService {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
+        medicationList.remove(medicationList.get(medicationList.size()-1));
         return  medicationList;
-
     }
 }
