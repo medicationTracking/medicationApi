@@ -11,4 +11,5 @@ public class Medication {
     String name;
     String activeIngredient;
     String barcode;
+    String company;
 }

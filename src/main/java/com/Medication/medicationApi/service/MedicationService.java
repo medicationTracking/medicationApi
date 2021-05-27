@@ -43,6 +43,8 @@ public class MedicationService {
                         }
                         if(cellCount == 3 && rowCount != 0){
                             medication.setActiveIngredient(df.formatCellValue(cell));
+                        }if(cellCount == 5 && rowCount != 0){
+                            medication.setCompany(df.formatCellValue(cell));
                         }
                         cellCount++;
                     }
